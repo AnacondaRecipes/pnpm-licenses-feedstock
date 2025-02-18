@@ -11,6 +11,8 @@ source:
 
 build:
   number: 0
+  # nodejs in not avaiable on linux-s390x
+  skip: True  # [s390x]
 
 requirements:
   build:
@@ -30,13 +32,19 @@ test:
 about:
   home: https://github.com/Quantco/pnpm-licenses
   license: MIT
+  license_family: MIT
   license_file:
     - LICENSE
     - third-party-licenses.txt
   summary: Generate third party license disclaimers in pnpm-based projects
+  description: This is a CLI tool for generating lists of licenses for all dependencies of a project using pnpm.
+  doc_url: https://github.com/Quantco/pnpm-licenses/blob/main/readme.md
+  dev_url: https://github.com/Quantco/pnpm-licenses
 
 extra:
   recipe-maintainers:
     - JaninaWibkerQC
     - pavelzw
     - xhochy
+  skip-lints:
+    - host_section_needs_exact_pinnings
